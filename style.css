@@ -35,8 +35,15 @@ html, body {
 }
 
 .mesa {
-    width: 20%;
-    height: 20%;
-    background-color: red;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(mesa.png);
+    width: 90%;
+    height: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 5px solid #470e05;
 }
 
