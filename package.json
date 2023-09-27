@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "@neodrag/solid": "^2.0.3",
-    "@neodrag/vanilla": "^2.0.3",
-    "interactjs": "^1.10.19"
-  }
-}

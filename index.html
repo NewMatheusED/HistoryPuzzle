@@ -11,11 +11,58 @@
         <div id="stage">
             <div id="level">
                 <div id="mesa">
+                    <div style="top: 20%;" id="gaveta">
+                        <div id="draggableItem" class="piece" style="background-image: url(images/piece.png);"></div>
+                    </div>
                     <div id="draggable" class="papel"></div>
-                </div>
+                </div><!--mesa-->
             </div><!--level-->
         </div><!--stage-->
     </div><!--game-->
-    <script src="app.js" type="module"></script>
+    <div id="overlay"></div>
+    <div id="image-popup">
+        <img src="" alt="Imagem completa">
+    </div><!--image-popup-->
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script>
+    const position = { x: 0, y: 0 }
+    const position2 = { x: 0, y: 0 } 
+
+    interact('#draggable').draggable({
+        listeners: {
+            start (event) {
+            console.log(event.type, event.target)
+            },
+            move (event) {
+            position.x += event.dx
+            position.y += event.dy
+
+            event.target.style.transform =
+                `translate(${position.x}px, ${position.y}px)`
+            },
+        },
+        modifiers: [
+            interact.modifiers.restrictRect({
+                restriction: 'parent'
+            })
+        ]
+    });
+
+    interact('#draggableItem').draggable({
+        listeners: {
+            start (event) {
+            console.log(event.type, event.target)
+            },
+            move (event) {
+            position.x += event.dx
+            position.y += event.dy
+
+            event.target.style.transform = `translate(${position.x}px, ${position.y}px)`
+            },
+        }
+    })
+      </script>
+    <script src="app.js"></script>
+    <script src="drag.js"></script>
 </body>
 </html>
