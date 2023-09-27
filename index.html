@@ -65,17 +65,23 @@
             },
         }
     })
+    
+    var checkPIN = false
 
     interact('.dropZone').dropzone({
         accept: '#draggableItem',
         ondrop: function (event) {
-            alert(event.relatedTarget.id
-            + ' was dropped into '
-            + event.target.classList)
+            document.querySelector('#maquina').style.backgroundImage = 'url(./images/maquina2.png)'
+            checkPIN = true;
+        },
+        ondragenter: function (event) {
+            document.querySelector('#maquina').style.backgroundImage = 'url(./images/maquina2.png)'
+            checkPIN = true;
+        },
+        ondragleave: function (event) {
+            document.querySelector('#maquina').style.backgroundImage = 'url(./images/maquina.png)'
+            checkPIN = false
         }
-    })
-    .on('dropactivate', function (event) {
-        event.target.classList.add('drop-activated')
     })
       </script>
     <script src="app.js"></script>
