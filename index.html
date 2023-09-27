@@ -11,10 +11,14 @@
         <div id="stage">
             <div id="level">
                 <div id="mesa">
-                    <div style="top: 20%;" id="gaveta">
-                        <div id="draggableItem" class="piece" style="background-image: url(images/piece.png);"></div>
+                    <div style="top: 66%;" id="gaveta">
+                        <div class="piece1" style="background-image: url(images/piece.png);"></div>
                     </div>
                     <div id="draggable" class="papel"></div>
+                    <div id="maquina">
+                        <div class="btnMaquina"></div>
+                        <div class="dropZone"></div>
+                    </div>
                 </div><!--mesa-->
             </div><!--level-->
         </div><!--stage-->
@@ -26,7 +30,7 @@
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
     <script>
     const position = { x: 0, y: 0 }
-    const position2 = { x: 0, y: 0 } 
+    const position2 = { x: 0, y: 0 }
 
     interact('#draggable').draggable({
         listeners: {
@@ -54,12 +58,24 @@
             console.log(event.type, event.target)
             },
             move (event) {
-            position.x += event.dx
-            position.y += event.dy
+            position2.x += event.dx
+            position2.y += event.dy
 
-            event.target.style.transform = `translate(${position.x}px, ${position.y}px)`
+            event.target.style.transform = `translate(${position2.x}px, ${position2.y}px)`
             },
         }
+    })
+
+    interact('.dropZone').dropzone({
+        accept: '#draggableItem',
+        ondrop: function (event) {
+            alert(event.relatedTarget.id
+            + ' was dropped into '
+            + event.target.classList)
+        }
+    })
+    .on('dropactivate', function (event) {
+        event.target.classList.add('drop-activated')
     })
       </script>
     <script src="app.js"></script>

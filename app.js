@@ -43,10 +43,12 @@ overlay.addEventListener('click', function() {
 });
 
 //--------------------------------------------
-
 document.querySelector('#mesa').addEventListener('click', function() {
   document.querySelector('#gaveta').classList.add('open')
+  document.querySelector('.piece1').id = 'draggableItem'
   document.querySelector('#draggableItem').classList.add('open1')
 })
+  //
 
 //--------------------------------------------
+
