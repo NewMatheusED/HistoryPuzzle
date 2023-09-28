@@ -16,12 +16,12 @@ function resizeDiv() {
 
 //--------------------------------------------
 
-const draggableElements = document.querySelectorAll('#draggable');
+const canSee = document.querySelectorAll('.canSee');
 const overlay = document.getElementById('overlay');
 const imagePopup = document.getElementById('image-popup');
 const imagePopupImage = imagePopup.querySelector('img');
 
-draggableElements.forEach(element => {
+canSee.forEach(element => {
   element.addEventListener('dblclick', function() {
     const backgroundImageUrl = getComputedStyle(element).backgroundImage.replace(/url\(['"]?(.*?)['"]?\)/, '$1');
     imagePopupImage.src = backgroundImageUrl;
@@ -43,12 +43,11 @@ overlay.addEventListener('click', function() {
 });
 
 //--------------------------------------------
-document.querySelector('#mesa').addEventListener('click', function() {
-  document.querySelector('#gaveta').classList.add('open')
-  document.querySelector('.piece1').id = 'draggableItem'
-  document.querySelector('#draggableItem').classList.add('open1')
-})
-  //
+// document.querySelector('#mesa').addEventListener('click', function() {
+//   document.querySelector('#gaveta').classList.add('open')
+//   document.querySelector('.piece1').id = 'draggableItem' //deixar o item drag apenas quando o player achá-lo
+//   document.querySelector('#draggableItem').classList.add('open1')
+// })
 
 //--------------------------------------------
 

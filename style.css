@@ -129,6 +129,18 @@ html, body {
     top: 2%;
 }
 
+#painel {
+    position: absolute;
+    background-image: url(./images/painel.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 32%;
+    height: 15%;
+    left: 35%;
+    top: 3%;
+}
+
 .btnMaquina {
     position: absolute;
     width: 20%;
@@ -146,6 +158,25 @@ html, body {
     background-color: transparent;
     right: 0;
     top: 10%
+}
+
+#pin1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 5%;
+    height: 9%;
+    background-color: #1a1a1a;
+    right: 10%;
+    top: 30%;
+}
+
+#pin1 .dot {
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 197);
 }
 
 .open { /* adicione essa classe para abrir a gaveta */

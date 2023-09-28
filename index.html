@@ -11,13 +11,17 @@
         <div id="stage">
             <div id="level">
                 <div id="mesa">
+                    <div id="painel"></div>
                     <div style="top: 66%;" id="gaveta">
-                        <div class="piece1" style="background-image: url(images/piece.png);"></div>
+                        <div id="draggableItem" class="piece1" style="background-image: url(images/piece.png);"></div>
                     </div>
-                    <div id="draggable" class="papel"></div>
+                    <div id="draggable" class="papel canSee"></div>
                     <div id="maquina">
                         <div class="btnMaquina"></div>
                         <div class="dropZone"></div>
+                    </div><!--maquina-->
+                    <div id="pin1">
+                        <div class="dot"></div>
                     </div>
                 </div><!--mesa-->
             </div><!--level-->
@@ -29,47 +33,14 @@
     </div><!--image-popup-->
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
     <script>
-    const position = { x: 0, y: 0 }
-    const position2 = { x: 0, y: 0 }
-
-    interact('#draggable').draggable({
-        listeners: {
-            start (event) {
-            console.log(event.type, event.target)
-            },
-            move (event) {
-            position.x += event.dx
-            position.y += event.dy
-
-            event.target.style.transform =
-                `translate(${position.x}px, ${position.y}px)`
-            },
-        },
-        modifiers: [
-            interact.modifiers.restrictRect({
-                restriction: 'parent'
-            })
-        ]
-    });
-
-    interact('#draggableItem').draggable({
-        listeners: {
-            start (event) {
-            console.log(event.type, event.target)
-            },
-            move (event) {
-            position2.x += event.dx
-            position2.y += event.dy
-
-            event.target.style.transform = `translate(${position2.x}px, ${position2.y}px)`
-            },
-        }
-    })
     
     var checkPIN = false
-
+    var PIN1 = false
+    var PIN2 = false
+    var PIN3 = false
+    
     interact('.dropZone').dropzone({
-        accept: '#draggableItem',
+        accept: '#pin1',
         ondrop: function (event) {
             document.querySelector('#maquina').style.backgroundImage = 'url(./images/maquina2.png)'
             checkPIN = true;
@@ -85,6 +56,6 @@
     })
       </script>
     <script src="app.js"></script>
-    <script src="drag.js"></script>
+    <script src="draggable.js"></script>
 </body>
 </html>
