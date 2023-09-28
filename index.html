@@ -25,7 +25,10 @@
                     <div style="top: 66%;" id="gaveta">
                         <div id="draggableItem" class="piece1" style="background-image: url(images/piece.png);"></div>
                     </div><!--gaveta-->
-                    <div id="draggable" class="papel canSee"></div>
+                    <div id="draggable1" class="papelPin1 canSee"></div>
+                    <div id="draggable2" class="papelPin2 canSee"></div>
+                    <div id="draggable3" class="papelPin3 canSee"></div>
+                    <div style="background-image: url(images/Papel.png);" id="draggable" class="papel canSee"></div>
                     <div id="maquina">
                         <div class="btnMaquina"></div>
                         <div class="dropZone"></div>
@@ -42,30 +45,8 @@
         <img src="" alt="Imagem completa">
     </div><!--image-popup-->
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
-    <script>
-    
-    var checkPIN = false
-    var PIN1 = false
-    var PIN2 = false
-    var PIN3 = false
-    
-    interact('.dropZone').dropzone({
-        accept: '#pin1',
-        ondrop: function (event) {
-            document.querySelector('#maquina').style.backgroundImage = 'url(./images/maquina2.png)'
-            checkPIN = true;
-        },
-        ondragenter: function (event) {
-            document.querySelector('#maquina').style.backgroundImage = 'url(./images/maquina2.png)'
-            checkPIN = true;
-        },
-        ondragleave: function (event) {
-            document.querySelector('#maquina').style.backgroundImage = 'url(./images/maquina.png)'
-            checkPIN = false
-        }
-    })
-      </script>
     <script src="app.js"></script>
     <script src="draggable.js"></script>
+    <script src="droppable.js"></script>
 </body>
 </html>

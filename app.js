@@ -69,6 +69,7 @@ var icones = [
 
 var iconeAtual = [0, 0, 0, 0];
 var correto = [1, 1, 1, 1];
+var codeCorrect = false;
 
 function mudarIcone(botao) {
   if (botao >= 1 && botao <= 4) {
@@ -82,6 +83,10 @@ function mudarIcone(botao) {
     divIcone.style.backgroundImage = "url(./images/icons/" + icones[iconeAtual[index]] + ")";
   }
   if(iconeAtual.toString() === correto.toString()) {
-    alert('aaaa deu bom buceta')
+    codeCorrect = true;
+    alert("e o cuzinho em")
   }
 }
+
+//--------------------------------------------
+

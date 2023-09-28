@@ -79,13 +79,24 @@ html, body {
     z-index: 2;
 }
 
-.papel {
+.papel, .papelPin1, .papelPin2, .papelPin3 {
     position: absolute;
     left: 50%;
     top: 50%;
     width: 22%;
     height: 50%;
-    background-image: url(images/Papel.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 3;
+}
+
+.papelPin1, .papelPin2, .papelPin3 {
+    position: absolute;
+    left: 3%;
+    top: 47%;
+    width: 22%;
+    height: 50%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -160,6 +171,7 @@ html, body {
     border-radius: 50%;
     background-color: #444444;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 2px;
 }
 
 .btnMaquina {
