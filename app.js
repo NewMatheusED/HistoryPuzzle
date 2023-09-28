@@ -51,3 +51,37 @@ overlay.addEventListener('click', function() {
 
 //--------------------------------------------
 
+var icones = [
+  "NPrancheta1_0.png", 
+  "NPrancheta1_1.png", 
+  "NPrancheta1_2.png", 
+  "NPrancheta1_3.png", 
+  "NPrancheta1_4.png", 
+  "NPrancheta1_5.png", 
+  "NPrancheta1_6.png", 
+  "NPrancheta1_7.png", 
+  "NPrancheta1_8.png", 
+  "NPrancheta1_9.png", 
+  "NPrancheta1_10.png", 
+  "NPrancheta1_11.png", 
+  "NPrancheta1_12.png"
+];
+
+var iconeAtual = [0, 0, 0, 0];
+var correto = [1, 1, 1, 1];
+
+function mudarIcone(botao) {
+  if (botao >= 1 && botao <= 4) {
+    var index = botao - 1;
+    var divIcone = document.querySelector(".ico.icon" + (index + 1));
+    
+    // Avance para o próximo ícone
+    iconeAtual[index] = (iconeAtual[index] + 1) % icones.length;
+    
+    // Atualize a imagem de fundo da div de ícone
+    divIcone.style.backgroundImage = "url(./images/icons/" + icones[iconeAtual[index]] + ")";
+  }
+  if(iconeAtual.toString() === correto.toString()) {
+    alert('aaaa deu bom buceta')
+  }
+}

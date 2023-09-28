@@ -11,10 +11,20 @@
         <div id="stage">
             <div id="level">
                 <div id="mesa">
-                    <div id="painel"></div>
+                    <div id="painel">
+                        <div style="left: 18%;" class="ico icon1"></div>
+                        <div style="left: 34%;" class="ico icon2"></div>
+                        <div style="left: 50%;" class="ico icon3"></div>
+                        <div style="left: 66%;" class="ico icon4"></div>
+                
+                        <div onclick="mudarIcone(1)" style="left: 9%;" class="btn1 bt"></div>
+                        <div onclick="mudarIcone(2)" style="left: 31%;" class="btn2 bt"></div>
+                        <div onclick="mudarIcone(3)" style="left: 52%;" class="btn3 bt"></div>
+                        <div onclick="mudarIcone(4)" style="left: 74%;" class="btn4 bt"></div>
+                    </div><!--painel-->      
                     <div style="top: 66%;" id="gaveta">
                         <div id="draggableItem" class="piece1" style="background-image: url(images/piece.png);"></div>
-                    </div>
+                    </div><!--gaveta-->
                     <div id="draggable" class="papel canSee"></div>
                     <div id="maquina">
                         <div class="btnMaquina"></div>
@@ -22,7 +32,7 @@
                     </div><!--maquina-->
                     <div id="pin1">
                         <div class="dot"></div>
-                    </div>
+                    </div><!--pin1-->
                 </div><!--mesa-->
             </div><!--level-->
         </div><!--stage-->
