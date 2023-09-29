@@ -84,7 +84,7 @@ function mudarIcone(botao) {
   }
   if(iconeAtual.toString() === correto.toString()) {
     codeCorrect = true;
-    alert("e o cuzinho em")
+    alert("Sequência correta")
   }
 }
 

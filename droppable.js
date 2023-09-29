@@ -23,9 +23,9 @@ interact('.dropZone').dropzone({
 })
 
 document.querySelector('.btnMaquina').addEventListener('click', function() {
-    if(checkPIN) {
-        document.querySelector('.papelPin1').style.backgroundImage = 'url(./images/papel.png)'
-    }else if(!checkPIN) {
-        alert("você precisa colocar o pin, sua bicha")
+    if(PIN1) {
+        document.querySelector('.papelPin1').style.backgroundImage = 'url(./images/papel.png)' // imagem que quer imprimir na impressora no Pin 1
+    }else if(!PIN1) {
+        alert("você precisa colocar o pin")
     }
 })
