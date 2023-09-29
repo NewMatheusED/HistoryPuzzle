@@ -22,6 +22,19 @@ interact('.dropZone').dropzone({
     }
 })
 
+interact('#draggable').dropzone({
+    accept: '#isqueiro',
+    ondrop: function (event) {
+        document.querySelector('.papel').style.backgroundImage = "url(./images/PapelQueimado.png)"
+    },
+    ondragenter: function (event) {
+        document.querySelector("#isqueiro").style.backgroundImage = "url(./images/isqueiroOn.png)"
+    },
+    ondragleave: function (event) {
+        document.querySelector("#isqueiro").style.backgroundImage = "url(./images/isqueiro.png)"
+    }
+})
+
 document.querySelector('.btnMaquina').addEventListener('click', function() {
     if(PIN1) {
         document.querySelector('.papelPin1').style.backgroundImage = 'url(./images/papel.png)' // imagem que quer imprimir na impressora no Pin 1

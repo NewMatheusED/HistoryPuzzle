@@ -1,5 +1,6 @@
 const position = { x: 0, y: 0 }
 const position2 = { x: 0, y: 0 }
+const isq = { x: 0, y: 0 }
 const pin1 = { x: 0, y: 0 }
 
 interact('#draggable').draggable({
@@ -13,6 +14,26 @@ interact('#draggable').draggable({
 
         event.target.style.transform =
             `translate(${position.x}px, ${position.y}px)`
+        },
+    },
+    modifiers: [
+        interact.modifiers.restrictRect({
+            restriction: 'parent'
+        })
+    ]
+});
+
+interact('#isqueiro').draggable({
+    listeners: {
+        start (event) {
+        console.log(event.type, event.target)
+        },
+        move (event) {
+        isq.x += event.dx
+        isq.y += event.dy
+
+        event.target.style.transform =
+            `translate(${isq.x}px, ${isq.y}px)`
         },
     },
     modifiers: [
