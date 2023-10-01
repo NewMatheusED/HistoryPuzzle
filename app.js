@@ -43,11 +43,12 @@ overlay.addEventListener('click', function() {
 });
 
 //--------------------------------------------
-// document.querySelector('#mesa').addEventListener('click', function() {
-//   document.querySelector('#gaveta').classList.add('open')
-//   document.querySelector('.piece1').id = 'draggableItem' //deixar o item drag apenas quando o player achá-lo
-//   document.querySelector('#draggableItem').classList.add('open1')
-// })
+   document.querySelector('#mesa').addEventListener('click', function() {
+     document.querySelector('#gaveta').classList.add('open') // animação abrir
+     document.querySelector('#gaveta').style.display = 'block'
+     document.querySelector('.piece1').id = 'draggableItem' //deixar o item drag apenas quando o player achá-lo
+     document.querySelector('.isqueiro').id = 'draggableItem2'
+   })
 
 //--------------------------------------------
 

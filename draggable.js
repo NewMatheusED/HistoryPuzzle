@@ -1,7 +1,11 @@
 const position = { x: 0, y: 0 }
 const position2 = { x: 0, y: 0 }
+const position3 = { x: 0, y: 0 }
+const position4 = { x: 0, y: 0 }
+const position5 = { x: 0, y: 0 }
 const isq = { x: 0, y: 0 }
 const pin1 = { x: 0, y: 0 }
+const pin2 = { x: 0, y: 0 }
 
 interact('#draggable').draggable({
     listeners: {
@@ -12,8 +16,7 @@ interact('#draggable').draggable({
         position.x += event.dx
         position.y += event.dy
 
-        event.target.style.transform =
-            `translate(${position.x}px, ${position.y}px)`
+        event.target.style.transform = `translate(${position.x}px, ${position.y}px)`
         },
     },
     modifiers: [
@@ -23,7 +26,63 @@ interact('#draggable').draggable({
     ]
 });
 
-interact('#isqueiro').draggable({
+interact('#draggable1').draggable({
+    listeners: {
+        start (event) {
+        console.log(event.type, event.target)
+        },
+        move (event) {
+        position5.x += event.dx
+        position5.y += event.dy
+
+        event.target.style.transform = `translate(${position5.x}px, ${position5.y}px)`
+        },
+    },
+    modifiers: [
+        interact.modifiers.restrictRect({
+            restriction: 'parent'
+        })
+    ]
+});
+
+interact('#draggable2').draggable({
+    listeners: {
+        start (event) {
+        console.log(event.type, event.target)
+        },
+        move (event) {
+        position3.x += event.dx
+        position3.y += event.dy
+
+        event.target.style.transform = `translate(${position3.x}px, ${position3.y}px)`
+        },
+    },
+    modifiers: [
+        interact.modifiers.restrictRect({
+            restriction: 'parent'
+        })
+    ]
+});
+interact('#draggable3').draggable({
+    listeners: {
+        start (event) {
+        console.log(event.type, event.target)
+        },
+        move (event) {
+        position4.x += event.dx
+        position4.y += event.dy
+
+        event.target.style.transform = `translate(${position4.x}px, ${position4.y}px)`
+        },
+    },
+    modifiers: [
+        interact.modifiers.restrictRect({
+            restriction: 'parent'
+        })
+    ]
+});
+
+interact('#draggableItem2').draggable({
     listeners: {
         start (event) {
         console.log(event.type, event.target)
@@ -32,15 +91,9 @@ interact('#isqueiro').draggable({
         isq.x += event.dx
         isq.y += event.dy
 
-        event.target.style.transform =
-            `translate(${isq.x}px, ${isq.y}px)`
+        event.target.style.transform = `translate(${isq.x}px, ${isq.y}px)`
         },
     },
-    modifiers: [
-        interact.modifiers.restrictRect({
-            restriction: 'parent'
-        })
-    ]
 });
 
 interact('#pin1').draggable({
@@ -52,8 +105,7 @@ interact('#pin1').draggable({
         pin1.x += event.dx
         pin1.y += event.dy
 
-        event.target.style.transform =
-            `translate(${pin1.x}px, ${pin1.y}px)`
+        event.target.style.transform = `translate(${pin1.x}px, ${pin1.y}px)`
         },
     },
     modifiers: [
@@ -61,6 +113,20 @@ interact('#pin1').draggable({
             restriction: 'parent'
         })
     ]
+});
+
+interact('#pin2').draggable({
+    listeners: {
+        start (event) {
+        console.log(event.type, event.target)
+        },
+        move (event) {
+        pin2.x += event.dx
+        pin2.y += event.dy
+
+        event.target.style.transform = `translate(${pin2.x}px, ${pin2.y}px)`
+        },
+    },
 });
 
 interact('#draggableItem').draggable({
