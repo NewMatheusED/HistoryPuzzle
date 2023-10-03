@@ -22,7 +22,7 @@ const imagePopup = document.getElementById('image-popup');
 const imagePopupImage = imagePopup.querySelector('img');
 
 canSee.forEach(element => {
-  element.addEventListener('dblclick', function() {
+ element.addEventListener('dblclick', function() {
     const backgroundImageUrl = getComputedStyle(element).backgroundImage.replace(/url\(['"]?(.*?)['"]?\)/, '$1');
     imagePopupImage.src = backgroundImageUrl;
 
@@ -30,16 +30,16 @@ canSee.forEach(element => {
     overlay.style.opacity = '1'; 
     overlay.style.display = 'block';
     imagePopup.style.display = 'block';
-  });
+ });
 });
 
 overlay.addEventListener('click', function() {
-  imagePopup.style.opacity = '0';
-  overlay.style.opacity = '0';
-  setTimeout(function() {
+ imagePopup.style.opacity = '0';
+ overlay.style.opacity = '0';
+ setTimeout(function() {
     overlay.style.display = 'none';
     imagePopup.style.display = 'none';
-  }, 300);
+ }, 300);
 });
 
 //--------------------------------------------

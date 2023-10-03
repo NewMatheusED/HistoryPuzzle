@@ -4,21 +4,53 @@ var PIN2 = false
 var PIN3 = false
 
 interact('.dropZone').dropzone({
-    accept: '#pin1, #pin2', //arrumar aceitação de diferentes chaves
+    accept: '#pin1, #pin2, #pin3',
     ondrop: function (event) {
         document.querySelector('#maquina').style.backgroundImage = 'url(./images/maquina2.png)'
         checkPIN = true;
-        PIN1 = true;
+        if(event.relatedTarget.id == 'pin1') {
+            console.log('pin1 colocado!')
+            PIN1 = true;
+            PIN2 = false;
+            PIN3 = false;
+        }else if(event.relatedTarget.id == 'pin2') {
+            console.log('pin2 colocado!')
+            PIN1 = false;
+            PIN2 = true;
+            PIN3 = false;
+        }else if(event.relatedTarget.id == 'pin3') {
+            console.log('pin3 colocado!')
+            PIN1 = false;
+            PIN2 = false;
+            PIN3 = true;
+        }
     },
     ondragenter: function (event) {
         document.querySelector('#maquina').style.backgroundImage = 'url(./images/maquina2.png)'
         checkPIN = true;
-        PIN1 = true;
+        if(event.relatedTarget.id == 'pin1') {
+            console.log('pin1 colocado!')
+            PIN1 = true;
+            PIN2 = false;
+            PIN3 = false;
+        }else if(event.relatedTarget.id == 'pin2') {
+            console.log('pin2 colocado!')
+            PIN1 = false;
+            PIN2 = true;
+            PIN3 = false;
+        }else if(event.relatedTarget.id == 'pin3') {
+            console.log('pin3 colocado!')
+            PIN1 = false;
+            PIN2 = false;
+            PIN3 = true;
+        }
     },
     ondragleave: function (event) {
         document.querySelector('#maquina').style.backgroundImage = 'url(./images/maquina.png)'
         checkPIN = false;
         PIN1 = false;
+        PIN2 = false;
+        PIN3 = false;
     }
 })
 
@@ -38,9 +70,11 @@ interact('#draggable').dropzone({
 document.querySelector('.btnMaquina').addEventListener('click', function() {
     if(PIN1) {
         document.querySelector('.papelPin1').style.backgroundImage = 'url(./images/file1.png)'
-        document.querySelector('.papelPin1').classList.add('canSee')
+        document.querySelector('.papelPin1').style.display = 'block';
         document.querySelector('.papelPin1').id = 'draggable1' // imagem que quer imprimir na impressora no Pin 1
-    }else if(!PIN1) {
-        alert("você precisa colocar o pin")
+    }else if(PIN2) {
+        
+    }else if(PIN3) {
+        
     }
 })
