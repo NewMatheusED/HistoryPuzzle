@@ -267,6 +267,15 @@ html, body {
     font-weight: bold;
 }
 
+#numPad .lights span {
+    position: absolute;
+    width: 14%;
+    height: 6%;
+    border-radius: 50%;
+    background-color: rgb(145, 145, 145);
+    top: -10%;
+}
+
 .open { /* adicione essa classe para abrir a gaveta */
     animation: open1 1s;
     animation-fill-mode: forwards;

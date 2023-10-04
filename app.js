@@ -90,4 +90,36 @@ function mudarIcone(botao) {
 }
 
 //--------------------------------------------
+var codeCorrect = false;
+var currPIN = [];
+var correctPIN = [4,2,3,4];
 
+function resetLights() {
+ for(var i = 0; i < 4; i++) {
+    document.querySelector("#light" + (i + 1)).style.backgroundColor = "gray";
+ }
+}
+
+function setPIN(num) {
+  if(currPIN.length == 4) {
+    currPIN = [];     
+    resetLights();
+  }
+  if(currPIN.length !== 4) {
+    currPIN.push(num)
+    console.log(currPIN)
+  }
+ 
+  // Atualize a cor das luzes
+  for(var i = 0; i < currPIN.length; i++) {
+     document.querySelector("#light" + (i + 1)).style.backgroundColor = "red";
+  }
+ 
+  if(currPIN.toString() === correctPIN.toString()) {
+     codeCorrect = true;
+     for(var i = 0; i < 4; i++) {
+       document.querySelector("#light" + (i + 1)).style.backgroundColor = "green";
+       document.querySelector("#light" + (i + 1)).removeAttribute('onclick')
+     }
+  }
+ }
