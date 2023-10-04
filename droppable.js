@@ -73,7 +73,9 @@ document.querySelector('.btnMaquina').addEventListener('click', function() {
         document.querySelector('.papelPin1').style.display = 'block';
         document.querySelector('.papelPin1').id = 'draggable1' // imagem que quer imprimir na impressora no Pin 1
     }else if(PIN2) {
-        
+        document.querySelector('.papelPin2').style.backgroundImage = 'url(./images/file2.png)'
+        document.querySelector('.papelPin2').style.display = 'block';
+        document.querySelector('.papelPin2').id = 'draggable2'
     }else if(PIN3) {
         
     }
