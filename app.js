@@ -86,9 +86,12 @@ function mudarIcone(botao) {
 }
 
 //--------------------------------------------
-var codeCorrect = false;
 var currPIN = [];
 var correctPIN = [4,2,2,4];
+var iconPIN1 = [2,4,1,3];
+var iconPIN2 = [1,3,2,4];
+var iconPIN3 = [4,3,2,1];
+var iconPIN4 = [3,1,4,2];
 
 function resetLights() {
  for(var i = 0; i < 4; i++) {
@@ -112,7 +115,6 @@ function setPIN(num) {
   }
  
   if(currPIN.toString() === correctPIN.toString()) {
-     codeCorrect = true;
      for(var i = 0; i < 4; i++) {
        document.querySelector("#light" + (i + 1)).style.backgroundColor = "green";
        document.querySelector("#light" + (i + 1)).removeAttribute('onclick');
@@ -121,5 +123,33 @@ function setPIN(num) {
        document.querySelector('.piece1').id = 'draggableItem' //deixar o item drag apenas quando o player achá-lo
        document.querySelector('.isqueiro').id = 'draggableItem2'
      }
+  }
+
+  if(currPIN.toString() === iconPIN1.toString()) {
+    for(var i = 0; i < 4; i++) {
+      document.querySelector("#light" + (i + 1)).style.backgroundColor = "green";
+      document.querySelector("#light" + (i + 1)).removeAttribute('onclick');
+    }
+  }
+
+  if(currPIN.toString() === iconPIN2.toString()) {
+    for(var i = 0; i < 4; i++) {
+      document.querySelector("#light" + (i + 1)).style.backgroundColor = "green";
+      document.querySelector("#light" + (i + 1)).removeAttribute('onclick');
+    }
+  }
+
+  if(currPIN.toString() === iconPIN3.toString()) {
+    for(var i = 0; i < 4; i++) {
+      document.querySelector("#light" + (i + 1)).style.backgroundColor = "green";
+      document.querySelector("#light" + (i + 1)).removeAttribute('onclick');
+    }
+  }
+
+  if(currPIN.toString() === iconPIN4.toString()) {
+    for(var i = 0; i < 4; i++) {
+      document.querySelector("#light" + (i + 1)).style.backgroundColor = "green";
+      document.querySelector("#light" + (i + 1)).removeAttribute('onclick');
+    }
   }
  }
