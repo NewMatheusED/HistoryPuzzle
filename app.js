@@ -111,7 +111,7 @@ var iconPIN1 = [2,4,1,3];
 var iconPIN2 = [1,3,2,4];
 var iconPIN3 = [4,3,2,1];
 var iconPIN4 = [3,1,4,2];
-var finalPIN = [4,1,3,2];
+var finalPIN = [2,4,1,3];
 
 function resetLights() {
  for(var i = 0; i < 4; i++) {
