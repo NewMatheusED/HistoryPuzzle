@@ -9,9 +9,13 @@ function resizeDiv() {
   var scaleWidth = width / 1280; // largura original da div
   var scaleHeight = height / 720; // altura original da div
   var scale = Math.min(scaleWidth, scaleHeight);
-
   var div = document.querySelector('#level');
-  div.style.transform = 'scale(' + scale + ')';
+  if(scale > 1) {
+    div.style.transform = 'scale(' + scale + ')';
+  }else if (scale < 1) {
+    div.style.transform = 'scale(' + scale + ')';
+  }
+
 }
 
 //--------------------------------------------
