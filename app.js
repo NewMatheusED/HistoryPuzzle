@@ -11,7 +11,7 @@ function resizeDiv() {
   var scale = Math.min(scaleWidth, scaleHeight);
   var div = document.querySelector('#level');
   if(scale > 1) {
-    div.style.transform = 'scale(' + scale + ')';
+    div.style.transform = 'scale(1)';
   }else if (scale < 1) {
     div.style.transform = 'scale(' + scale + ')';
   }

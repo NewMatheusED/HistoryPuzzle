@@ -63,10 +63,10 @@ interact('#draggable').dropzone({
         document.querySelector('.papel').style.backgroundImage = "url(./images/PapelQueimado.png)"
     },
     ondragenter: function (event) {
-        document.querySelector(".isqueiro").style.backgroundImage = "url(./images/isqueiroOn.png)"
+        document.querySelector(".isqueiro").style.backgroundImage = "url(./images/IsqueiroOn.png)"
     },
     ondragleave: function (event) {
-        document.querySelector(".isqueiro").style.backgroundImage = "url(./images/isqueiro.png)"
+        document.querySelector(".isqueiro").style.backgroundImage = "url(./images/Isqueiro.png)"
     }
 })
 
