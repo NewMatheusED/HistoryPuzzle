@@ -85,6 +85,9 @@ interact('.hole1').dropzone({
         document.querySelector('.piece1').style.transform = 'translate(0px, 0px)'
         document.querySelector('.piece1').id = ''
         hole1 = true
+        if(hole1 && hole2 && hole3) {
+            alert('Parabens, vc é um viado profissional')
+        }
     } 
 })
 
@@ -103,6 +106,9 @@ interact('.hole2').dropzone({
         document.querySelector('.piece2').style.transform = 'translate(0px, 0px)'
         document.querySelector('.piece2').id = ''
         hole2 = true
+        if(hole1 && hole2 && hole3) {
+            alert('Parabens, vc é um viado profissional')
+        }
     } 
 })
 
@@ -121,6 +127,9 @@ interact('.hole3').dropzone({
         document.querySelector('.piece3').style.transform = 'translate(0px, 0px)'
         document.querySelector('.piece3').id = ''
         hole3 = true
+        if(hole1 && hole2 && hole3) {
+            alert('Parabens, vc é um viado profissional')
+        }
     } 
 })
 

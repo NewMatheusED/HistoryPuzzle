@@ -334,6 +334,16 @@ html, body {
     left: 23%;
 }
 
+.fios .light {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    background-color: #ff0000;
+    left: -20%;
+    top: 10%
+}
+
 .open { /* adicione essa classe para abrir a gaveta */
     animation: open1 1s;
     animation-fill-mode: forwards;

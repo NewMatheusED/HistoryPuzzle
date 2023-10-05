@@ -110,6 +110,7 @@ var iconPIN1 = [2,4,1,3];
 var iconPIN2 = [1,3,2,4];
 var iconPIN3 = [4,3,2,1];
 var iconPIN4 = [3,1,4,2];
+var finalPIN = [4,1,3,2];
 
 function resetLights() {
  for(var i = 0; i < 4; i++) {
@@ -174,21 +175,31 @@ function setPIN(num) {
       document.querySelector('.iconMesa4').style.display = 'block'
     }
   }
+
+  if(currPIN.toString() === finalPIN.toString()) {
+    for(var i = 0; i < 4; i++) {
+      document.querySelector("#light" + (i + 1)).style.backgroundColor = "green";
+      document.querySelector("#light" + (i + 1)).removeAttribute('onclick');
+      document.querySelector('#gaveta3').style.display = 'block';
+      document.querySelector('#gaveta3').classList.add('open')
+    }
+  }
  }
 
  //--------------------------------------------
 
  let fios = document.querySelectorAll('.fio');
  let fioCortado = [];
- let correctFios = [];
+ let correctFios = [4,1,3,2,5];
  
  fios.forEach((fio, index) => {
      fio.addEventListener('click', () => {
          fio.style.backgroundImage = `url(./images/fio${index + 1}C.png)`;
          fioCortado.push(index + 1)
-         console.log(fioCortado)
          if(fioCortado.toString() !== correctFios.toString()) {
-          
+
+         }else if (fioCortado.toString() == correctFios.toString()){
+          document.querySelector('.fios .light').style.backgroundColor = 'green'
          }
      });
  });
