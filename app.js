@@ -64,8 +64,8 @@ var icones = [
   "NPrancheta1_12.png"
 ];
 
-var iconeAtual = [0, 0, 0, 0];
-var correto = [1, 1, 1, 1];
+var iconeAtual = [1, 1, 1, 1];
+var correto = [3, 12, 9, 0];
 var codeCorrect = false;
 
 function mudarIcone(botao) {
@@ -81,7 +81,8 @@ function mudarIcone(botao) {
   }
   if(iconeAtual.toString() === correto.toString()) {
     codeCorrect = true;
-    alert("Sequência correta")
+    document.querySelector('#gaveta2').classList.add('open') // animação abrir
+    document.querySelector('#gaveta2').style.display = 'block'
   }
 }
 
@@ -129,6 +130,7 @@ function setPIN(num) {
     for(var i = 0; i < 4; i++) {
       document.querySelector("#light" + (i + 1)).style.backgroundColor = "green";
       document.querySelector("#light" + (i + 1)).removeAttribute('onclick');
+      document.querySelector('.iconMesa1').style.display = 'block'
     }
   }
 
@@ -136,6 +138,7 @@ function setPIN(num) {
     for(var i = 0; i < 4; i++) {
       document.querySelector("#light" + (i + 1)).style.backgroundColor = "green";
       document.querySelector("#light" + (i + 1)).removeAttribute('onclick');
+      document.querySelector('.iconMesa2').style.display = 'block'
     }
   }
 
@@ -143,6 +146,7 @@ function setPIN(num) {
     for(var i = 0; i < 4; i++) {
       document.querySelector("#light" + (i + 1)).style.backgroundColor = "green";
       document.querySelector("#light" + (i + 1)).removeAttribute('onclick');
+      document.querySelector('.iconMesa3').style.display = 'block'
     }
   }
 
@@ -150,6 +154,7 @@ function setPIN(num) {
     for(var i = 0; i < 4; i++) {
       document.querySelector("#light" + (i + 1)).style.backgroundColor = "green";
       document.querySelector("#light" + (i + 1)).removeAttribute('onclick');
+      document.querySelector('.iconMesa4').style.display = 'block'
     }
   }
  }

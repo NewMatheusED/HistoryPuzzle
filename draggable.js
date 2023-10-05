@@ -3,9 +3,11 @@ const position2 = { x: 0, y: 0 }
 const position3 = { x: 0, y: 0 }
 const position4 = { x: 0, y: 0 }
 const position5 = { x: 0, y: 0 }
+const position6 = {x: 0, y: 0 }
 const isq = { x: 0, y: 0 }
 const pin1 = { x: 0, y: 0 }
 const pin2 = { x: 0, y: 0 }
+const pin3 = { x: 0, y: 0 }
 
 interact('#draggable').draggable({
     listeners: {
@@ -96,6 +98,20 @@ interact('#draggableItem2').draggable({
     },
 });
 
+interact('#draggableItem3').draggable({
+    listeners: {
+        start (event) {
+        console.log(event.type, event.target)
+        },
+        move (event) {
+        position6.x += event.dx
+        position6.y += event.dy
+
+        event.target.style.transform = `translate(${position6.x}px, ${position6.y}px)`
+        },
+    },
+});
+
 interact('#pin1').draggable({
     listeners: {
         start (event) {
@@ -125,6 +141,20 @@ interact('#pin2').draggable({
         pin2.y += event.dy
 
         event.target.style.transform = `translate(${pin2.x}px, ${pin2.y}px)`
+        },
+    },
+});
+
+interact('#pin3').draggable({
+    listeners: {
+        start (event) {
+        console.log(event.type, event.target)
+        },
+        move (event) {
+        pin3.x += event.dx
+        pin3.y += event.dy
+
+        event.target.style.transform = `translate(${pin3.x}px, ${pin3.y}px)`
         },
     },
 });

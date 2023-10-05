@@ -105,7 +105,7 @@ html, body {
     z-index: 3;
 }
 
-#gaveta {
+#gaveta, #gaveta2 {
     display: none;
     position: absolute;
     background-image: url(images/gaveta.png);
@@ -120,7 +120,7 @@ html, body {
     opacity: 0;
 }
 
-.piece1 {
+.piece1, .piece2 {
     position: relative;
     width: 30%;
     height: 40%;
@@ -208,7 +208,7 @@ html, body {
     top: 30%;
 }
 
-#pin2 {
+#pin2, #pin3 {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -276,6 +276,41 @@ html, body {
     top: -10%;
 }
 
+.hole1, .hole2, .hole3 {
+    position: absolute;
+    width: 10%;
+    height: 15%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -9;
+}
+
+#gaveta .ico {
+    position: absolute;
+    z-index: -9;
+    left: 35%;
+    top: 35%;
+    width: 30%;
+    height: 40%;
+    background-image: url(./images/icons/NPrancheta1_3.png);
+    filter: invert(0.5);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.iconesMesa div {
+    display: none;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 8%;
+    height: 8%;
+    z-index: -9;
+}
+
 .open { /* adicione essa classe para abrir a gaveta */
     animation: open1 1s;
     animation-fill-mode: forwards;
@@ -284,10 +319,28 @@ html, body {
 .open1 {
     cursor: default;
 }
+
+.shine {
+    animation: shy 1.5s infinite;
+}
 @keyframes open1 {
     100% {
         left: -18%;
         opacity: 1;
         cursor: default;
+    }
+}
+
+@keyframes shy {
+    0% {
+       filter: drop-shadow(0px 0px 0px rgba(0, 255, 112, 0.7));
+    }
+
+    50% {
+        filter: drop-shadow(0px 0px 10px rgba(0, 255, 112, 0.7));
+    }
+
+    100% {
+        filter: drop-shadow(0px 0px 0px rgba(0, 255, 112, 0.7));
     }
 }
