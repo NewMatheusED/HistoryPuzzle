@@ -98,7 +98,8 @@ function mudarIcone(botao) {
   if(iconeAtual.toString() === correto.toString()) {
     codeCorrect = true;
     document.querySelector('#gaveta2').classList.add('open') // animação abrir
-    document.querySelector('#gaveta2').style.display = 'block'
+    document.querySelector('#gaveta2').style.display = 'block';
+    document.querySelector('.fios').style.display = 'block';
   }
 }
 

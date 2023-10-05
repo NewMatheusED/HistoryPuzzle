@@ -312,6 +312,7 @@ html, body {
 }
 
 .fios {
+    display: none;
     position: absolute;
     background-image: url(./images/oreo.png);
     background-position: center;
