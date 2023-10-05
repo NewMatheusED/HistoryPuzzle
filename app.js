@@ -6,14 +6,26 @@ window.onload = function() {
 function resizeDiv() {
   var width = window.innerWidth;
   var height = window.innerHeight;
-  var scaleWidth = width / 1280; // largura original da div
-  var scaleHeight = height / 720; // altura original da div
-  var scale = Math.min(scaleWidth, scaleHeight);
-  var div = document.querySelector('#level');
-  if(scale > 1) {
-    div.style.transform = 'scale(1)';
-  }else if (scale < 1) {
-    div.style.transform = 'scale(' + scale + ')';
+  if(width < 1400) {
+    var scaleWidth = width / 1280; // largura original da div
+    var scaleHeight = height / 720; // altura original da div
+    var scale = Math.min(scaleWidth, scaleHeight);
+    var div = document.querySelector('#level');
+    if(scale > 1) {
+      div.style.transform = 'scale(1)';
+    }else if (scale < 1) {
+      div.style.transform = 'scale(' + scale + ')';
+    }
+  }else if(width > 1400) {
+    var scaleWidth = width / 1600; // largura original da div
+    var scaleHeight = height / 900; // altura original da div
+    var scale = Math.min(scaleWidth, scaleHeight);
+    var div = document.querySelector('#level');
+    if(scale > 1) {
+      div.style.transform = 'scale(1)';
+    }else if (scale < 1) {
+      div.style.transform = 'scale(' + scale + ')';
+    }
   }
 
 }

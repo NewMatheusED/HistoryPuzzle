@@ -98,11 +98,29 @@ interact('.hole2').dropzone({
     },
     ondrop: function (event) {
         document.querySelector('.hole2').classList.remove('shine')
-        document.querySelector('.piece2').style.top = '126%'
+        document.querySelector('.piece2').style.top = '133%'
         document.querySelector('.piece2').style.left = '300%'
         document.querySelector('.piece2').style.transform = 'translate(0px, 0px)'
         document.querySelector('.piece2').id = ''
         hole2 = true
+    } 
+})
+
+interact('.hole3').dropzone({
+    accept: '.piece3',
+    ondragenter: function (event) {
+        document.querySelector('.hole3').classList.add('shine')
+    },
+    ondragleave: function (event) {
+        document.querySelector('.hole3').classList.remove('shine')
+    },
+    ondrop: function (event) {
+        document.querySelector('.hole3').classList.remove('shine')
+        document.querySelector('.piece3').style.top = '211%'
+        document.querySelector('.piece3').style.left = '491%'
+        document.querySelector('.piece3').style.transform = 'translate(0px, 0px)'
+        document.querySelector('.piece3').id = ''
+        hole3 = true
     } 
 })
 

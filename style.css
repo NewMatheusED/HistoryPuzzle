@@ -105,7 +105,7 @@ html, body {
     z-index: 3;
 }
 
-#gaveta, #gaveta2 {
+#gaveta, #gaveta2, #gaveta3 {
     display: none;
     position: absolute;
     background-image: url(images/gaveta.png);
@@ -120,7 +120,7 @@ html, body {
     opacity: 0;
 }
 
-.piece1, .piece2 {
+.piece1, .piece2, .piece3 {
     position: relative;
     width: 30%;
     height: 40%;
@@ -204,8 +204,8 @@ html, body {
     width: 5%;
     height: 9%;
     background-color: #1a1a1a;
-    right: 10%;
-    top: 30%;
+    right: 25%;
+    top: 40%;
 }
 
 #pin2, #pin3 {
@@ -311,6 +311,28 @@ html, body {
     z-index: -9;
 }
 
+.fios {
+    position: absolute;
+    background-image: url(./images/oreo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20%;
+    height: 35%;
+    right: 2%;
+    top: 2%;
+}
+
+.fios div {
+    position: absolute;
+    width: 55%;
+    height: 10%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: 23%;
+}
+
 .open { /* adicione essa classe para abrir a gaveta */
     animation: open1 1s;
     animation-fill-mode: forwards;
@@ -342,5 +364,12 @@ html, body {
 
     100% {
         filter: drop-shadow(0px 0px 0px rgba(0, 255, 112, 0.7));
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    #stage {
+        width: 1600px;
+        height: 900px;
     }
 }
