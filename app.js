@@ -191,16 +191,25 @@ function setPIN(num) {
 
  let fios = document.querySelectorAll('.fio');
  let fioCortado = [];
- let correctFios = [4,1,3,2,5];
+ let correctFios = [4, 1, 3, 2, 5];
  
  fios.forEach((fio, index) => {
      fio.addEventListener('click', () => {
          fio.style.backgroundImage = `url(./images/fio${index + 1}C.png)`;
-         fioCortado.push(index + 1)
-         if(fioCortado.toString() !== correctFios.toString()) {
-
-         }else if (fioCortado.toString() == correctFios.toString()){
-          document.querySelector('.fios .light').style.backgroundColor = 'green'
+         fioCortado.push(index + 1);
+         
+         if (fioCortado.toString() !== correctFios.toString()) {
+          if(fioCortado.length > 4) {
+            setTimeout(() => {
+                fios.forEach((fio, index) => {
+                    fio.style.backgroundImage = `url(./images/fio${index + 1}.png)`;
+                });
+                fioCortado = [];
+            }, 500);
+          }
+         } else if (fioCortado.toString() == correctFios.toString()) {
+             document.querySelector('.fios .light').style.backgroundColor = 'green';
          }
      });
  });
+ 
