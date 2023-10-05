@@ -80,7 +80,7 @@ html, body {
     z-index: 2;
 }
 
-.papel, .papelPin1, .papelPin2, .papelPin3 {
+.papel, .papelPin1, .papelPin2, .papelPin3, .papel2 {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -324,6 +324,7 @@ html, body {
 }
 
 .fios div {
+    cursor: pointer;
     position: absolute;
     width: 55%;
     height: 10%;

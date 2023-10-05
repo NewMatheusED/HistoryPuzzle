@@ -103,6 +103,7 @@ function mudarIcone(botao) {
 }
 
 //--------------------------------------------
+
 var currPIN = [];
 var correctPIN = [4,2,2,4];
 var iconPIN1 = [2,4,1,3];
@@ -174,3 +175,20 @@ function setPIN(num) {
     }
   }
  }
+
+ //--------------------------------------------
+
+ let fios = document.querySelectorAll('.fio');
+ let fioCortado = [];
+ let correctFios = [];
+ 
+ fios.forEach((fio, index) => {
+     fio.addEventListener('click', () => {
+         fio.style.backgroundImage = `url(./images/fio${index + 1}C.png)`;
+         fioCortado.push(index + 1)
+         console.log(fioCortado)
+         if(fioCortado.toString() !== correctFios.toString()) {
+          
+         }
+     });
+ });

@@ -5,6 +5,7 @@ const position4 = { x: 0, y: 0 }
 const position5 = { x: 0, y: 0 }
 const position6 = { x: 0, y: 0 }
 const position7 = { x: 0, y: 0 }
+const position8 = { x: 0, y: 0 }
 const isq = { x: 0, y: 0 }
 const pin1 = { x: 0, y: 0 }
 const pin2 = { x: 0, y: 0 }
@@ -76,6 +77,25 @@ interact('#draggable3').draggable({
         position4.y += event.dy
 
         event.target.style.transform = `translate(${position4.x}px, ${position4.y}px)`
+        },
+    },
+    modifiers: [
+        interact.modifiers.restrictRect({
+            restriction: 'parent'
+        })
+    ]
+});
+
+interact('#draggable4').draggable({
+    listeners: {
+        start (event) {
+        console.log(event.type, event.target)
+        },
+        move (event) {
+        position8.x += event.dx
+        position8.y += event.dy
+
+        event.target.style.transform = `translate(${position8.x}px, ${position8.y}px)`
         },
     },
     modifiers: [

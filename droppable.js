@@ -130,7 +130,7 @@ document.querySelector('.btnMaquina').addEventListener('click', function() {
         document.querySelector('.papelPin1').style.display = 'block';
         document.querySelector('.papelPin1').id = 'draggable1'
     }else if(PIN2) {
-        document.querySelector('.papelPin2').style.backgroundImage = 'url(./images/file2.png)'
+        document.querySelector('.papelPin2').style.backgroundImage = 'url(./images/file4.png)'
         document.querySelector('.papelPin2').style.display = 'block';
         document.querySelector('.papelPin2').id = 'draggable2'
     }else if(PIN3) {
