@@ -128,7 +128,12 @@ interact('.hole3').dropzone({
         document.querySelector('.piece3').id = ''
         hole3 = true
         if(hole1 && hole2 && hole3) {
-            alert('Parabens, vc é um viado profissional')
+            imagePopupImage.src = 'images/folhaFinal.jpg';
+            imagePopup.style.opacity = '1'; 
+            overlay.style.opacity = '1'; 
+            overlay.style.display = 'block';
+            imagePopup.style.display = 'block';
+            papelAudio.play()
         }
     } 
 })
