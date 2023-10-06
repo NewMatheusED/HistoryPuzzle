@@ -42,16 +42,16 @@ const canSee = document.querySelectorAll('.canSee');
 const overlay = document.getElementById('overlay');
 const imagePopup = document.getElementById('image-popup');
 const imagePopupImage = imagePopup.querySelector('img');
-
+var papelAudio = new Audio('audio/papel.mp3')
 canSee.forEach(element => {
  element.addEventListener('dblclick', function() {
     const backgroundImageUrl = getComputedStyle(element).backgroundImage.replace(/url\(['"]?(.*?)['"]?\)/, '$1');
     imagePopupImage.src = backgroundImageUrl;
-
     imagePopup.style.opacity = '1'; 
     overlay.style.opacity = '1'; 
     overlay.style.display = 'block';
     imagePopup.style.display = 'block';
+    papelAudio.play()
  });
 });
 
@@ -63,10 +63,6 @@ overlay.addEventListener('click', function() {
     imagePopup.style.display = 'none';
  }, 300);
 });
-
-//--------------------------------------------
-   document.querySelector('#mesa').addEventListener('click', function() {
-   })
 
 //--------------------------------------------
 
@@ -89,9 +85,12 @@ var icones = [
 var iconeAtual = [1, 1, 1, 1];
 var correto = [3, 12, 9, 0];
 var codeCorrect = false;
+var audioPanel = new Audio('audio/clickPanel.mp3')
+var granted = new Audio('audio/granted.mp3')
 
 function mudarIcone(botao) {
   if (botao >= 1 && botao <= 4) {
+    audioPanel.play();
     var index = botao - 1;
     var divIcone = document.querySelector(".ico.icon" + (index + 1));
     
@@ -102,6 +101,7 @@ function mudarIcone(botao) {
     divIcone.style.backgroundImage = "url(./images/icons/" + icones[iconeAtual[index]] + ")";
   }
   if(iconeAtual.toString() === correto.toString()) {
+    granted.play();
     codeCorrect = true;
     document.querySelector('#gaveta2').classList.add('open') // animação abrir
     document.querySelector('#gaveta2').style.display = 'block';
@@ -113,23 +113,23 @@ function mudarIcone(botao) {
 
 var currPIN = [];
 var correctPIN = [4,2,2,4];
-var iconPIN1 = [2,4,1,3];
+var iconPIN1 = [2,4,3,1];
 var iconPIN2 = [1,3,2,4];
 var iconPIN3 = [4,3,2,1];
 var iconPIN4 = [3,1,4,2];
 var finalPIN = [2,4,1,3];
+var clickAudio = new Audio('audio/click.mp3')
+var denied = new Audio('audio/denied.mp3')
 
 function resetLights() {
- for(var i = 0; i < 4; i++) {
-    document.querySelector("#light" + (i + 1)).style.backgroundColor = "gray";
+ for(var i = 0; i <= 4; i++) {
+    var l = document.querySelectorAll('.l')
+    l[i].style.backgroundColor = "gray";
  }
 }
 
 function setPIN(num) {
-  if(currPIN.length == 4) {
-    currPIN = [];     
-    resetLights();
-  }
+  clickAudio.play();
   if(currPIN.length !== 4) {
     currPIN.push(num)
     console.log(currPIN)
@@ -141,55 +141,91 @@ function setPIN(num) {
   }
  
   if(currPIN.toString() === correctPIN.toString()) {
+    console.log('c')
      for(var i = 0; i < 4; i++) {
        document.querySelector("#light" + (i + 1)).style.backgroundColor = "green";
-       document.querySelector("#light" + (i + 1)).removeAttribute('onclick');
        document.querySelector('#gaveta').classList.add('open') // animação abrir
        document.querySelector('#gaveta').style.display = 'block'
        document.querySelector('.piece1').id = 'draggableItem' //deixar o item drag apenas quando o player achá-lo
        document.querySelector('.isqueiro').id = 'draggableItem2'
+       currPIN = [];
+       granted.play();
+       setTimeout(() => {
+        resetLights()
+       }, 1000);  
      }
   }
 
   if(currPIN.toString() === iconPIN1.toString()) {
+    console.log('p1')
     for(var i = 0; i < 4; i++) {
       document.querySelector("#light" + (i + 1)).style.backgroundColor = "green";
-      document.querySelector("#light" + (i + 1)).removeAttribute('onclick');
       document.querySelector('.iconMesa1').style.display = 'block'
+      currPIN = [];
+      granted.play();
+      setTimeout(() => {
+       resetLights()
+      }, 1000); 
     }
   }
 
   if(currPIN.toString() === iconPIN2.toString()) {
+    console.log('p2')
     for(var i = 0; i < 4; i++) {
       document.querySelector("#light" + (i + 1)).style.backgroundColor = "green";
-      document.querySelector("#light" + (i + 1)).removeAttribute('onclick');
       document.querySelector('.iconMesa2').style.display = 'block'
+      currPIN = [];
+      granted.play();
+      setTimeout(() => {
+       resetLights()
+      }, 1000); 
     }
   }
 
   if(currPIN.toString() === iconPIN3.toString()) {
+    console.log('p3')
     for(var i = 0; i < 4; i++) {
       document.querySelector("#light" + (i + 1)).style.backgroundColor = "green";
-      document.querySelector("#light" + (i + 1)).removeAttribute('onclick');
       document.querySelector('.iconMesa3').style.display = 'block'
+      currPIN = [];
+      granted.play();
+      setTimeout(() => {
+       resetLights()
+      }, 1000); 
     }
   }
 
   if(currPIN.toString() === iconPIN4.toString()) {
+    console.log('p4')
     for(var i = 0; i < 4; i++) {
       document.querySelector("#light" + (i + 1)).style.backgroundColor = "green";
-      document.querySelector("#light" + (i + 1)).removeAttribute('onclick');
       document.querySelector('.iconMesa4').style.display = 'block'
+      currPIN = [];
+      granted.play();
+      setTimeout(() => {
+       resetLights()
+      }, 1000); 
     }
   }
 
   if(currPIN.toString() === finalPIN.toString()) {
+    console.log('f')
+    document.querySelector('#gaveta3').style.display = 'block';
+    document.querySelector('#gaveta3').classList.add('open')
+    currPIN = [];
+    granted.play();
+    setTimeout(() => {
+     resetLights()
+    }, 1000); 
     for(var i = 0; i < 4; i++) {
       document.querySelector("#light" + (i + 1)).style.backgroundColor = "green";
-      document.querySelector("#light" + (i + 1)).removeAttribute('onclick');
-      document.querySelector('#gaveta3').style.display = 'block';
-      document.querySelector('#gaveta3').classList.add('open')
     }
+  }
+  if(currPIN.toString() !== correctPIN.toString() && currPIN.toString() !== iconPIN1.toString() && currPIN.toString() !== iconPIN2.toString() && currPIN.toString() !== iconPIN3.toString() && currPIN.toString() !== iconPIN4.toString() && currPIN.toString() !== finalPIN.toString() && currPIN.length == 4){
+    currPIN = [];  
+    clickAudio.pause();
+    denied.play()   
+    resetLights();
   }
  }
 
@@ -206,6 +242,7 @@ function setPIN(num) {
          
          if (fioCortado.toString() !== correctFios.toString()) {
           if(fioCortado.length > 4) {
+            denied.play();
             setTimeout(() => {
                 fios.forEach((fio, index) => {
                     fio.style.backgroundImage = `url(./images/fio${index + 1}.png)`;
@@ -215,6 +252,7 @@ function setPIN(num) {
           }
          } else if (fioCortado.toString() == correctFios.toString()) {
              document.querySelector('.fios .light').style.backgroundColor = 'green';
+             granted.play();
          }
      });
  });

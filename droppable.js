@@ -133,18 +133,23 @@ interact('.hole3').dropzone({
     } 
 })
 
+var print = new Audio('audio/print.mp3')
+
 document.querySelector('.btnMaquina').addEventListener('click', function() {
     if(PIN1) {
-        document.querySelector('.papelPin1').style.backgroundImage = 'url(./images/file1.png)'
+        document.querySelector('.papelPin1').style.backgroundImage = 'url(./images/file1.png)';
         document.querySelector('.papelPin1').style.display = 'block';
-        document.querySelector('.papelPin1').id = 'draggable1'
+        document.querySelector('.papelPin1').id = 'draggable1';
+        print.play();
     }else if(PIN2) {
-        document.querySelector('.papelPin2').style.backgroundImage = 'url(./images/file4.png)'
+        document.querySelector('.papelPin2').style.backgroundImage = 'url(./images/file4.png)';
         document.querySelector('.papelPin2').style.display = 'block';
-        document.querySelector('.papelPin2').id = 'draggable2'
+        document.querySelector('.papelPin2').id = 'draggable2';
+        print.play();
     }else if(PIN3) {
-        document.querySelector('.papelPin3').style.backgroundImage = 'url(./images/file3.png)'
+        document.querySelector('.papelPin3').style.backgroundImage = 'url(./images/file3.png)';
         document.querySelector('.papelPin3').style.display = 'block';
-        document.querySelector('.papelPin3').id = 'draggable3'
+        document.querySelector('.papelPin3').id = 'draggable3';
+        print.play();
     }
 })
