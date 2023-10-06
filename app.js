@@ -1,6 +1,12 @@
 window.addEventListener('resize', resizeDiv);
 window.onload = function() {
   resizeDiv();
+
+  imagePopupImage.src = 'images/instruções.jpg';
+  imagePopup.style.opacity = '1'; 
+  overlay.style.opacity = '1'; 
+  overlay.style.display = 'block';
+  imagePopup.style.display = 'block';
 }
 
 function resizeDiv() {

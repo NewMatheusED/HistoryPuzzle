@@ -11,7 +11,7 @@ const pin1 = { x: 0, y: 0 }
 const pin2 = { x: 0, y: 0 }
 const pin3 = { x: 0, y: 0 }
 
-interact('#draggable').draggable({
+interact('#draggable').draggable({ //mainPapel
     listeners: {
         start (event) {
         console.log(event.type, event.target)
@@ -25,12 +25,12 @@ interact('#draggable').draggable({
     },
     modifiers: [
         interact.modifiers.restrictRect({
-            restriction: 'parent'
+            restriction: '#mesa'
         })
     ]
 });
 
-interact('#draggable1').draggable({
+interact('#draggable1').draggable({ //papelPIN
     listeners: {
         start (event) {
         console.log(event.type, event.target)
@@ -44,12 +44,12 @@ interact('#draggable1').draggable({
     },
     modifiers: [
         interact.modifiers.restrictRect({
-            restriction: 'parent'
+            restriction: '#mesa'
         })
     ]
 });
 
-interact('#draggable2').draggable({
+interact('#draggable2').draggable({ //papelPIN
     listeners: {
         start (event) {
         console.log(event.type, event.target)
@@ -63,11 +63,11 @@ interact('#draggable2').draggable({
     },
     modifiers: [
         interact.modifiers.restrictRect({
-            restriction: 'parent'
+            restriction: '#mesa'
         })
     ]
 });
-interact('#draggable3').draggable({
+interact('#draggable3').draggable({ //papelPIN
     listeners: {
         start (event) {
         console.log(event.type, event.target)
@@ -81,12 +81,12 @@ interact('#draggable3').draggable({
     },
     modifiers: [
         interact.modifiers.restrictRect({
-            restriction: 'parent'
+            restriction: '#mesa'
         })
     ]
 });
 
-interact('#draggable4').draggable({
+interact('#draggable4').draggable({ //papelPIN
     listeners: {
         start (event) {
         console.log(event.type, event.target)
@@ -100,12 +100,12 @@ interact('#draggable4').draggable({
     },
     modifiers: [
         interact.modifiers.restrictRect({
-            restriction: 'parent'
+            restriction: '#mesa'
         })
     ]
 });
 
-interact('#draggableItem2').draggable({
+interact('#draggableItem2').draggable({ //isqueiro
     listeners: {
         start (event) {
         console.log(event.type, event.target)
@@ -117,6 +117,11 @@ interact('#draggableItem2').draggable({
         event.target.style.transform = `translate(${isq.x}px, ${isq.y}px)`
         },
     },
+    modifiers: [
+        interact.modifiers.restrictRect({
+            restriction: '#level'
+        })
+    ]
 });
 
 interact('#draggableItem3').draggable({
@@ -131,6 +136,11 @@ interact('#draggableItem3').draggable({
         event.target.style.transform = `translate(${position6.x}px, ${position6.y}px)`
         },
     },
+    modifiers: [
+        interact.modifiers.restrictRect({
+            restriction: '#level'
+        })
+    ]
 });
 
 interact('#draggableItem4').draggable({
@@ -145,6 +155,11 @@ interact('#draggableItem4').draggable({
         event.target.style.transform = `translate(${position7.x}px, ${position7.y}px)`
         },
     },
+    modifiers: [
+        interact.modifiers.restrictRect({
+            restriction: '#level'
+        })
+    ]
 });
 
 interact('#pin1').draggable({
@@ -161,7 +176,7 @@ interact('#pin1').draggable({
     },
     modifiers: [
         interact.modifiers.restrictRect({
-            restriction: 'parent'
+            restriction: '#mesa'
         })
     ]
 });
@@ -178,6 +193,11 @@ interact('#pin2').draggable({
         event.target.style.transform = `translate(${pin2.x}px, ${pin2.y}px)`
         },
     },
+    modifiers: [
+        interact.modifiers.restrictRect({
+            restriction: '#level'
+        })
+    ]
 });
 
 interact('#pin3').draggable({
@@ -192,6 +212,11 @@ interact('#pin3').draggable({
         event.target.style.transform = `translate(${pin3.x}px, ${pin3.y}px)`
         },
     },
+    modifiers: [
+        interact.modifiers.restrictRect({
+            restriction: '#level'
+        })
+    ]
 });
 
 interact('#draggableItem').draggable({
@@ -205,5 +230,10 @@ interact('#draggableItem').draggable({
 
         event.target.style.transform = `translate(${position2.x}px, ${position2.y}px)`
         },
-    }
+    },
+    modifiers: [
+        interact.modifiers.restrictRect({
+            restriction: '#level'
+        })
+    ]
 })
